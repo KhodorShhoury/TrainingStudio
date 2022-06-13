@@ -10,6 +10,9 @@
     --main-padding-top:100px;
     --main-padding-bottom:100px;
 }
+body{
+    font-family: poppins, sans-serif;
+}
 html{
     scroll-behavior: smooth;
 }
@@ -56,12 +59,60 @@ a{
     background-color: bisque;
 }
 .header .container{
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
     align-items: center;
     height: 100%;
 }
-.header .container .nav-links{
+.header .container .logo{
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header .container .logo a{
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+}
+.header .container .logo a span{
+    color: var(--main-color);
+}
+.header .container .nav{
+    padding: 0px 15px;
+}
+.header .container .nav-links{
+    display: flex !important;
+}
+.header .container .nav-links .link{
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+}
+.header .container .nav-links .link a{
+    font-weight: 600;
+    font-size: 13px;
+    height: 40px;
+    text-transform: uppercase;
+    color: white;
+    transition: color var(--main-transition-duration);
+    letter-spacing: 1px;
+    display: block;
+    line-height: 40px;
+}
+.header .container .nav-links .link a:hover{
+    color: var(--main-color);
+    transition: color var(--main-transition-duration);
+}
+.header .container .nav-links .link a.active{
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.header .container .nav-links .link.Button-link{
+    padding: 11px 17px;
+    background-color: var(--main-color);
 }
 /* end header */
