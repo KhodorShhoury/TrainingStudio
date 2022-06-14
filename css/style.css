@@ -9,10 +9,11 @@
     --main-transition-duration : 0.3s;
     --main-padding-top:100px;
     --main-padding-bottom:100px;
+    --grayish-color : #EEE
 }
 body{
     font-family: poppins, sans-serif;
-    height: 101vh;
+    height: 150vh;
 }
 html{
     scroll-behavior: smooth;
@@ -67,11 +68,22 @@ a{
     align-items: center;
     height: 100%;
     text-align: center;
+    position: relative;
 }
 @media(max-width:991px){
+    
     .header .container{
         flex-direction: column;
         justify-content: center;
+    }
+}
+@media(max-width:767px){
+    .header{
+        background-color: white;
+    }
+    .header .container{
+        flex-direction: row;
+        justify-content: space-around;
     }
 }
 .header .container .logo{
@@ -85,19 +97,51 @@ a{
     text-transform: uppercase;
     color: white;
 }
+@media(max-width:767px){
+    .header .container .logo a{ 
+        color: black;
+    }
+}
 .header .container .logo a span{
     color: var(--main-color);
 }
 .header .container .nav{
     padding: 0px 15px;
+    display: flex;
 }
-@media(max-width:991px){
+@media(max-width:767px){
     .header .container .nav{
-        
+        flex-direction: row-reverse;
     }
 }
 .header .container .nav-links{
-    display: flex !important;
+    display: flex;
+    align-items: center;
+    
+}
+
+@media(max-width:767px){
+    .header .container .nav .nav-links{
+        visibility: hidden;
+        flex-direction: column;
+        align-items:initial;
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        width: 70%;
+        overflow: hidden;
+        padding: 0 0 1px 0;
+        max-height: 0%;
+        transition: all var(--main-transition-duration) ease-out;
+    }
+    
+}
+.header .container .nav-links.active{
+    visibility: visible;
+    max-height: 310px;
+    transition: all var(--main-transition-duration) ease-out;
 }
 .header .container .nav-links .link{
     padding: 0 20px;
@@ -117,9 +161,26 @@ a{
     display: block;
     line-height: 40px;
 }
+@media(max-width:767px){
+    .header .container .nav-links .link,
+    .header .container .nav-links .link.link.Button-link{
+        border-top: 1px var(--grayish-color) solid;
+        padding: 25px 0;
+    }
+    .header .container .nav-links .link:hover{
+        background-color: var(--grayish-color);
+        transition: background-color var(--main-transition-duration) linear;
+    }
+    .header .container .nav-links .link a{
+        color: black;
+    }
+    .header .container .nav-links .link:last-child a{
+        color: white;
+    }
+}
 .header .container .nav-links .link:hover a{
     color: var(--main-color);
-    transition: color var(--main-transition-duration);
+    transition: color var(--main-transition-duration) linear;
 }
 .header .container .nav-links .link:last-child:hover{
     background-color: white;
@@ -133,6 +194,43 @@ a{
     padding: 11px 17px;
     background-color: var(--main-color);
 }
+.header .container .nav .menu-trigger{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+@media(max-width:767px){
+    .header .container .nav .menu-trigger{
+        display: flex;
+    }
+}
+.header .container .nav .menu-trigger span{
+    width: 75%;
+    height: 2px;
+    background-color: black;
+    transform-origin:left ;
+    transition: all var(--main-transition-duration) linear;
+}
+.header .container .nav .menu-trigger span:first-child.active{
+    width: 100%;
+    transform: rotate(45deg) translateX(-2px);
+}
+.header .container .nav .menu-trigger span:nth-child(2).active{
+    opacity: 0;
+}
+.header .container .nav .menu-trigger span:last-child.active{
+    width: 100%;
+    transform: rotate(-45deg) translateX(-2px);
+}
+.header .container .nav .menu-trigger span:nth-child(2){
+    width: 100%;
+}
 /* end header */
 
 /* start main */
@@ -142,10 +240,11 @@ a{
     position: relative;
 }
 .main .video-background{
-   width: 100%;
-   height: 100vh;
+   min-width: 100%;
+   max-width: 100%;
+   min-height: 100%;
+   max-height: 100%;
    object-fit: cover;
-   position: fixed;
 }
 .main .video-overlay{
     position: absolute;
