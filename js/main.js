@@ -45,6 +45,20 @@ window.onscroll = function(){
    
     toggleHeader();
     
+   
+
+    // bodyDirectElements.forEach(ele=>{
+    //     if(ele.offsetHeight === document.documentElement.scrollTop){
+    //         navBarLinks.forEach(link => link.classList.remove("active"))
+    //         let currentSection = ele;
+    //         navBarLinks.forEach(link =>{
+    //             if(link.dataset.link == currentSection.dataset.link){
+    //                 console.log(link)
+    //                 link.classList.add("active")
+    //             }
+    //         })
+    //     }
+    // })
 }
 
 
