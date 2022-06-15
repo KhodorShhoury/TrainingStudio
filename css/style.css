@@ -9,14 +9,15 @@
     --main-transition-duration : 0.3s;
     --main-padding-top:100px;
     --main-padding-bottom:100px;
+    --border-grayish-color : #EEE;
     --grayish-color : #7A7A7A;
     --main-padding-top : 100px;
     --main-padding-bottom : 80px;
     --black-color : #232D39;
+    --link-blue-color : #0056B3 ;
 }
 body{
     font-family: poppins, sans-serif;
-    height: 200vh;
 }
 html{
     scroll-behavior: smooth;
@@ -64,6 +65,7 @@ a{
     background-color: rgba(250, 250, 250, 0.1);
     position: absolute;
     z-index: 999;
+    transition: all var(--main-transition-duration) linear;
 }
 .header.fixed{
     background-color: #FAFAFA;
@@ -109,6 +111,11 @@ a{
     font-weight: 800;
     text-transform: uppercase;
     color: white;
+}
+@media(max-width:480px){
+    .header .container .logo a{
+        font-size: 24px;
+    }
 }
 @media(max-width:767px){
     .header .container .logo a{ 
@@ -177,11 +184,11 @@ a{
 @media(max-width:767px){
     .header .container .nav-links .link,
     .header .container .nav-links .link.link.Button-link{
-        border-top: 1px var(--grayish-color) solid;
+        border-top: 1px var(--border-grayish-color) solid;
         padding: 25px 0;
     }
     .header .container .nav-links .link:hover{
-        background-color: var(--grayish-color);
+        background-color: var(--border-grayish-color);
         transition: background-color var(--main-transition-duration) linear;
     }
     .header .container .nav-links .link a{
@@ -191,16 +198,20 @@ a{
         color: white;
     }
 }
-.header .container .nav-links .link:hover a{
+.header .container .nav-links .link:hover a,
+.header.fixed .container .nav-links .link:hover a{
     color: var(--main-color);
     transition: color var(--main-transition-duration) linear;
+}
+.header.fixed .container .nav-links .link:last-child:hover{
+    background-color: #F9735b;
 }
 .header .container .nav-links .link:last-child:hover{
     background-color: white;
 }
 .header .container .nav-links .link.active a{
     font-weight: 500;
-    color: var(--main-color);
+    color: var(--main-color) !important;
 }
 
 .header .container .nav-links .link.Button-link{
@@ -290,6 +301,19 @@ a{
     word-spacing: 0;
     color: white;
 }
+@media(max-width:480px){
+    .main .caption{
+        top: 45%;
+    }
+    .main .caption h6{
+        width: 200px;
+        margin: 0px auto 0;
+    }
+    .main .caption h2{
+        font-size: 50px;
+        line-height: 60px;
+    }
+}
 .main .caption h2 span{
     color: var(--main-color);
 }
@@ -376,13 +400,19 @@ a{
     
 }
 .features .container .section-body .column .box .right-content h4{
-    font-size: 16px;
+    font-size: 19px;
     color: var(--black-color);
 }
 .features .container .section-body .column .box .right-content p{
     max-width: 100%;
     margin: 7px 0px;
     color: var(--grayish-color);
+    font-size: 14px;
+    line-height: 2;
+}
+.features .container .section-body .column .box .right-content p a{
+    color: var(--link-blue-color);
+    font-weight: 600;
     font-size: 14px;
 }
 .features .container .section-body .column .box .right-content a{
