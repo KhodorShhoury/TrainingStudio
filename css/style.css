@@ -308,6 +308,7 @@ a{
 .features{
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
+    width: 100%;
 }
 .features .container{
     display: flex;
@@ -350,12 +351,12 @@ a{
 .features .container .section-body .column{
     display: flex;
     flex-direction: column;
-   padding: 0 15px;
 }
     
 .features .container .section-body .column .box{
     display: flex;
     margin-bottom: 60px;
+    padding: 0 15px;
 }
 .features .container .section-body .column .box .left-icon{
     margin: 0 30px 0 0;
@@ -375,6 +376,7 @@ a{
     color: var(--black-color);
 }
 .features .container .section-body .column .box .right-content p{
+    max-width: 100%;
     margin: 7px 0px;
     color: var(--grayish-color);
     font-size: 14px;
