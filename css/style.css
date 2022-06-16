@@ -15,6 +15,7 @@
     --main-padding-bottom : 80px;
     --black-color : #232D39;
     --link-blue-color : #0056B3 ;
+    --main-border-radius : 5px;
 }
 body{
     font-family: poppins, sans-serif;
@@ -27,7 +28,8 @@ ul{
 }
 a{
     text-decoration: none;
-    display: block;
+    display: inline-block;
+    cursor: pointer;
 }
 .container{
     padding-left: 15px;
@@ -59,7 +61,7 @@ a{
 }
 .main-heading p{
     font-size: 14px;
-    width: 60%;
+    width: 50%;
     line-height: 25px;
     color: var(--grayish-color);
     text-align: center;
@@ -77,6 +79,8 @@ a{
     padding: 12px 20px;
     color: white;
     font-weight: 600;
+    border-radius: 5px;
+
    
 }
 
@@ -485,3 +489,122 @@ a{
     }
     
 }
+
+/* start classes */
+.classes{
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+   
+}
+.classes .container{
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-between;
+}
+@media(max-width:991px){
+    .classes .container{
+        flex-direction: column;
+        
+    }
+}
+.classes .container .schedules{
+    flex: 0 0 33.33%;
+}
+@media(max-width:991px){
+    .classes .container .schedules{
+        width: 100%;
+        flex: 0 0 100%;
+        margin: 0px 0px 30px 0px;
+    }
+}
+@media(min-width:992px){
+    .classes .container .schedules{
+        padding: 0px 25px;
+
+    }
+}
+.classes .container .schedules ul{
+ width: 100%;
+}
+.classes .container .schedules ul li{
+ margin-bottom: 30px;
+ box-shadow : 0px 0px 15px rgba(0, 0, 0 ,0.1);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ align-items: center;
+ border-radius: var(--main-border-radius);
+}
+.classes .container .schedules ul li a{
+    font-size: 19px;
+    font-weight: 600;
+    padding: 30px;
+    color: var(--black-color);
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.classes .container .schedules ul li a.active{
+    color: var(--main-color)
+}
+.classes .container .schedules ul li a i{
+    color: var(--main-color);
+    font-size: 30px;
+    margin-right: 10px;
+    transform: rotate(-30deg);
+}
+.classes .container .schedules ul .button{
+    text-align: center;
+    border-radius: var(--main-border-radius);
+}
+.classes .container .schedules ul .button a{
+    font-size: 19px;
+    padding: 20px 30px 20px 30px;
+    background-color: var(--main-color);
+    font-weight: 700;
+    color: white;
+    display: block;
+}
+.classes .container .class-desc{
+    flex: 0 0 66.66%;
+}
+
+@media(min-width:992px){
+    .classes .container .class-desc{
+        padding: 0px 25px;
+    }
+}
+
+.classes .container .class-desc .content{
+    display: none;
+    flex-direction: column;
+}
+@media(max-width:991px){
+    .classes .container .class-desc .content{
+        align-items: center;
+    }
+}
+.classes .container .class-desc .content.active{
+    display: flex;
+}
+.classes .container .class-desc .content .image{
+    width: 100%;
+}
+.classes .container .class-desc .content .image img{
+    border-radius: var(--main-border-radius);
+    max-width: 100%;
+}
+
+.classes .container .class-desc .content h3{
+    font-size: 23px;
+    font-weight: 700;
+    margin: 20px 0px;
+}
+.classes .container .class-desc .content p{
+    color: var(--grayish-color);
+    margin: 0px 0px 20px 0px;
+}
+.classes .container .class-desc .content .main-button{
+    margin: 0;
+}
+/* end classes */

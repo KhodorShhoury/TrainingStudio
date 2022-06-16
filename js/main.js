@@ -62,3 +62,30 @@ window.onscroll = function(){
 }
 
 
+// start classes
+let schedules = document.querySelectorAll(".schedules ul li");
+let contents = document.querySelectorAll(".class-desc .content");
+let schedulesLinks = document.querySelectorAll(".schedules ul li a");
+
+
+//disable href from links
+
+schedulesLinks.forEach((link)=>{
+    link.onclick = () => false
+})
+
+function showContent(e){
+    schedulesLinks.forEach(link =>{
+        link.classList.remove("active");
+        e.currentTarget.querySelector("a").classList.add("active");
+        
+
+    })
+    contents.forEach((content)=>{
+        content.classList.remove("active");
+        content.dataset.class === e.currentTarget.dataset.class ? content.classList.add("active") : "";
+    })
+}
+
+schedules.forEach(schedule=> schedule.addEventListener("click",showContent))
+// end classes
