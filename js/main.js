@@ -1,3 +1,12 @@
+//global
+
+let anchors = [...document.body.querySelectorAll("a")];
+anchors.forEach(a =>{
+    a.href == "#" ?a.onclick = ()=> false : "";
+    
+})
+
+
 //header variables
 let triggerButton = document.querySelector(".menu-trigger");
 let navBar = document.querySelector(".nav-links");
@@ -63,16 +72,14 @@ window.onscroll = function(){
 
 
 // start classes
-let schedules = document.querySelectorAll(".schedules ul li");
+let schedules = document.querySelectorAll(".schedules-links ul li");
 let contents = document.querySelectorAll(".class-desc .content");
-let schedulesLinks = document.querySelectorAll(".schedules ul li a");
+let schedulesLinks = document.querySelectorAll(".schedules-links ul li a");
 
 
 //disable href from links
 
-schedulesLinks.forEach((link)=>{
-    link.onclick = () => false
-})
+
 
 function showContent(e){
     schedulesLinks.forEach(link =>{
@@ -100,7 +107,7 @@ let tableTdTime = document.querySelectorAll(".schedules .schedule-table td.time"
 function showTime(e){
     tableTdTime.forEach(time =>{
         schedulesDays.forEach(day => day.classList.remove("active"));
-        
+
         e.currentTarget.classList.add("active")
         time.classList.remove("show");
         time.dataset.day == e.currentTarget.dataset.day ? time.classList.add("show") : ""

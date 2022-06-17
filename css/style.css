@@ -43,6 +43,7 @@ a{
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-bottom: 100px;
 }
 
 .main-heading h2{
@@ -397,7 +398,6 @@ a{
 .features .container .section-body{
     display: flex;
     align-items: center;
-    margin-top: 100px;
 }
 @media(max-width:991px){
     .features .container .section-body{
@@ -677,6 +677,72 @@ a{
     transition: opacity var(--main-transition-duration);
 }
 .schedules .container .schedule-table tr td.time.show{
-
-opacity: 1;}
+    opacity: 1;
+}
 /* end schedule */
+/* start trainers */
+.trainers{
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    width: 100%;
+}
+.trainers .container{
+
+}
+.trainers .container .trainers-card{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.trainers .container .trainers-card .card{
+    padding: 40px;
+    width: 350px;
+    box-shadow: rgba(0 ,0 , 0 ,0.15) 0px 0px 10px 0px;
+}
+@media(max-width:1199px){
+    .trainers .container .trainers-card .card{
+        width: 100%;
+        margin-bottom: 50px;
+    }  
+}
+.trainers .container .trainers-card .card .image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.trainers .container .trainers-card .card .image img{
+    max-width: 100%;
+    border-radius: var(--main-border-radius);
+}
+.trainers .container .trainers-card .card .content{
+    display: flex;
+    flex-direction: column;
+}
+.trainers .container .trainers-card .card .content span{
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--main-color);
+    margin: 25px 0px 10px 0px;
+    display: inline-block;
+}
+.trainers .container .trainers-card .card .content h4{
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--black-color);
+    margin: 10px 0px;
+}
+.trainers .container .trainers-card .card .content p{
+    font-size: 14px;
+    line-height: 25px;
+    margin-bottom: 25px;
+    color: var(--grayish-color);
+}
+.trainers .container .trainers-card .card .content .social{
+    display: flex;
+}
+.trainers .container .trainers-card .card .content .social i{
+    margin-right: 10px;
+    color: var(--black-color);
+}
+/* end trainers */
