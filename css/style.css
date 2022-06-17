@@ -172,14 +172,7 @@ a{
         font-size: 24px;
     }
 }
-@media(max-width:767px){
-    .header .container .logo{
-        
-    }
-    .header .container .logo a{ 
-        color: var(--black-color);
-    }
-}
+
 
 .header .container .logo a span{
     color: var(--main-color);
@@ -684,21 +677,22 @@ a{
 .trainers{
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
-    width: 100%;
 }
-.trainers .container{
 
-}
 .trainers .container .trainers-card{
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
+}
+@media(max-width:991px){
+    .trainers .container .trainers-card{
+        flex-direction: column;
+    }
 }
 .trainers .container .trainers-card .card{
     padding: 40px;
     width: 350px;
     box-shadow: rgba(0 ,0 , 0 ,0.15) 0px 0px 10px 0px;
+    margin: 0 15px;
 }
 @media(max-width:1199px){
     .trainers .container .trainers-card .card{
@@ -746,3 +740,91 @@ a{
     color: var(--black-color);
 }
 /* end trainers */
+
+/* start contact */
+.contact{
+    display: flex;
+    margin-top: 100px;
+}
+.contact .location iframe{
+    height: 100%;
+    width: 100%;
+}
+@media(min-width:992px){
+.contact .location{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.contact .contact-form{
+flex: 0 0 50%;
+max-width: 50%;
+}
+}
+@media(max-width:991px){
+    .contact{
+        flex-direction: column;
+    }
+}
+.contact .contact-form{
+background-image: url("../img/contact-bg.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: cover cover;
+}
+@media(min-width:481px){
+    .contact .contact-form {
+        padding: 80px;
+    }
+}
+.contact .contact-form form{
+    display: block;
+    background-color: white;
+    padding: 40px;
+}
+.contact .contact-form form .inputs{
+    display: flex;
+    flex-wrap: wrap;
+}
+.contact .contact-form form .inputs .input-div{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.contact .contact-form form .inputs .input-div .input{
+    width: 100%;
+    font-size: 14px;
+    margin: 0 0 30px 0;
+    padding: 0 10px;
+    height: 40px;
+    outline: none;
+    border: 1px solid #ddd;
+}
+.contact .contact-form form .inputs .input-div textarea{
+    line-height: 40px;
+    height: 150px !important;
+    resize: none;
+
+}
+@media(min-width:481px){
+    .contact .contact-form form .inputs .name,
+    .contact .contact-form form .inputs .email{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+
+/* end contact */
+
+.footer{
+    text-align: center;
+    background-color: var(--main-color);
+}
+.footer p{
+    font-weight: 600;
+    color: black;
+    text-transform: uppercase;
+}
+.footer p a{
+    font-size: 19px;
+    color: White;
+}
