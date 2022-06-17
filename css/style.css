@@ -784,6 +784,7 @@ background-position: cover cover;
     display: block;
     background-color: white;
     padding: 40px;
+    border-radius: var(--main-border-radius);
 }
 .contact .contact-form form .inputs{
     display: flex;
