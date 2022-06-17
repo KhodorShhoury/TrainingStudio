@@ -746,8 +746,12 @@ a{
     display: flex;
     margin-top: 100px;
 }
+.contact .location {
+    min-height: 500px;
+}
 .contact .location iframe{
-    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
     width: 100%;
 }
 @media(min-width:992px){
