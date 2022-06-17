@@ -66,7 +66,11 @@ a{
     color: var(--grayish-color);
     text-align: center;
 }
-
+@media (max-width:480px) {
+    .main-heading p{
+        width: 100%;
+    }
+}
 .main-button{
     text-align: center;
     margin: 0 auto;
@@ -507,26 +511,26 @@ a{
         
     }
 }
-.classes .container .schedules{
+.classes .container .schedules-links{
     flex: 0 0 33.33%;
 }
 @media(max-width:991px){
-    .classes .container .schedules{
+    .classes .container .schedules-links{
         width: 100%;
         flex: 0 0 100%;
         margin: 0px 0px 30px 0px;
     }
 }
 @media(min-width:992px){
-    .classes .container .schedules{
+    .classes .container .schedules-links{
         padding: 0px 25px;
 
     }
 }
-.classes .container .schedules ul{
+.classes .container .schedules-links ul{
  width: 100%;
 }
-.classes .container .schedules ul li{
+.classes .container .schedules-links ul li{
  margin-bottom: 30px;
  box-shadow : 0px 0px 15px rgba(0, 0, 0 ,0.1);
  display: flex;
@@ -535,7 +539,7 @@ a{
  align-items: center;
  border-radius: var(--main-border-radius);
 }
-.classes .container .schedules ul li a{
+.classes .container .schedules-links ul li a{
     font-size: 19px;
     font-weight: 600;
     padding: 30px;
@@ -544,20 +548,20 @@ a{
     align-items: center;
     width: 100%;
 }
-.classes .container .schedules ul li a.active{
+.classes .container .schedules-links ul li a.active{
     color: var(--main-color)
 }
-.classes .container .schedules ul li a i{
+.classes .container .schedules-links ul li a i{
     color: var(--main-color);
     font-size: 30px;
     margin-right: 10px;
     transform: rotate(-30deg);
 }
-.classes .container .schedules ul .button{
+.classes .container .schedules-links ul .button{
     text-align: center;
     border-radius: var(--main-border-radius);
 }
-.classes .container .schedules ul .button a{
+.classes .container .schedules-links ul .button a{
     font-size: 19px;
     padding: 20px 30px 20px 30px;
     background-color: var(--main-color);
@@ -610,47 +614,69 @@ a{
 /* end classes */
 
 /* start schedule */
-.schedule{
+.schedules{
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
-    background-color: gray;
+    background-color: #343940;
 }
-.schedule .container{
+.schedules .main-heading h2{
+    color: white;
+}
+.schedules .container{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.schedule .container .days{
+.schedules .container .days{
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 15px auto
 }
-.schedule .container .days .day{
+.schedules .container .days .day{
     color: white;
     font-weight: 500;
     font-size: 15px;
     cursor: pointer;
-    margin-right: 10px;
+    transition: color var(--main-transition-duration);
+    margin: 15px 10px 15px 0px;
 }
-.schedule .container .days .day:hover{
+.schedules .container .days .day.active{
     color: var(--main-color);
 }
-.schedule .container .days .day:not(:last-child)::after{
+.schedules .container .days .day:hover{
+    color: var(--main-color);
+}
+.schedules .container .days .day:not(:last-child)::after{
     content: "/";
     margin: 0px 0px 0px 10px;
+    color: white !important;
 }
-.schedule .container .schedule-table{
-    margin-top: 50px;
+.schedules .container .schedule-table{
     border: 1px solid white;
+    border-collapse: collapse;
+    width: 100%;
 } 
-.schedule .container .schedule-table tr{
-    border-bottom: 1px solid white;
+.schedules .container .schedule-table tr{
+    border-bottom: 1px white solid;
+    border-collapse: separate;
 }
-.schedule .container .schedule-table tr td:not(:last-child){
+.schedules .container .schedule-table tr td:not(:last-child){
     border-right: 1px solid white;
 }
-.schedule .container .schedule-table tr td{
+.schedules .container .schedule-table tr td{
     height: 100px;
     text-align: center;
     color: white;
+    font-size: 13px;
+    font-weight: 500;
 }
+.schedules .container .schedule-table tr td.time{
+    opacity: 0;
+    transition: opacity var(--main-transition-duration);
+}
+.schedules .container .schedule-table tr td.time.show{
+
+opacity: 1;}
 /* end schedule */

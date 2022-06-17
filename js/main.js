@@ -89,3 +89,22 @@ function showContent(e){
 
 schedules.forEach(schedule=> schedule.addEventListener("click",showContent))
 // end classes
+
+
+
+
+//handle table
+let schedulesDays = document.querySelectorAll(".schedules .days .day");
+let tableTdTime = document.querySelectorAll(".schedules .schedule-table td.time");
+
+function showTime(e){
+    tableTdTime.forEach(time =>{
+        schedulesDays.forEach(day => day.classList.remove("active"));
+        
+        e.currentTarget.classList.add("active")
+        time.classList.remove("show");
+        time.dataset.day == e.currentTarget.dataset.day ? time.classList.add("show") : ""
+    })
+}
+
+schedulesDays.forEach(day => day.addEventListener("click",showTime));
