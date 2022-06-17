@@ -1,8 +1,8 @@
 //global
-
+//disable href from links
 let anchors = [...document.body.querySelectorAll("a")];
 anchors.forEach(a =>{
-    a.href == "#" ?a.onclick = ()=> false : "";
+    a.href == "#" ? a.onclick = ()=> false : ""
     
 })
 
@@ -79,7 +79,9 @@ let schedulesLinks = document.querySelectorAll(".schedules-links ul li a");
 
 //disable href from links
 
-
+schedulesLinks.forEach((link)=>{
+    link.onclick = () => false
+})
 
 function showContent(e){
     schedulesLinks.forEach(link =>{
