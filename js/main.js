@@ -5,20 +5,22 @@ anchors.forEach(a =>{
     a.href == "#" ? a.onclick = ()=> false : ""
     
 })
-
-
-//header variables
-let triggerButton = document.querySelector(".menu-trigger");
-let navBar = document.querySelector(".nav-links");
-let menuTrigger = [...document.querySelectorAll(".menu-trigger span")]
-let navBarLinks = [...navBar.querySelectorAll(".link")]
+// variables
 let headerSection = document.querySelector(".header")
-let mainSection = document.querySelector(".main");
-let bodyDirectElements = [...document.body.children];
-//functions
 
-//trigger navbar function
-function triggerNavBar(){
+let navBarButton = document.querySelector(".menu-trigger");
+let menuTrigger = [...document.querySelectorAll(".menu-trigger span")];
+
+let navBar = document.querySelector(".nav-links");
+let navBarLinks = [...navBar.querySelectorAll(".nav-links .link")];
+
+
+let mainSection = document.querySelector(".main");
+
+
+
+// navbar function
+function showNavBar(){
     if(navBar.classList.contains("active")){
         navBar.classList.remove("active")
         menuTrigger.forEach((ele => ele.classList.remove("active")))
@@ -32,7 +34,6 @@ function toggleNavBarLinks(){
     navBar.classList.remove("active")
     menuTrigger.forEach((ele => ele.classList.remove("active")))
 
-
     navBarLinks.forEach(link => link.classList.remove("active"));
     this.classList.add("active")
 }
@@ -40,7 +41,7 @@ function toggleNavBarLinks(){
 navBarLinks.forEach(link=>link.addEventListener("click",toggleNavBarLinks))
 
 //trigger navbar
-triggerButton.addEventListener("click",triggerNavBar);
+navBarButton.addEventListener("click",showNavBar);
 
 function toggleHeader(){
     if(document.documentElement.scrollTop >=  mainSection.offsetHeight - 80){
@@ -51,23 +52,7 @@ function toggleHeader(){
 }
 
 window.onscroll = function(){
-   
     toggleHeader();
-    
-   
-
-    // bodyDirectElements.forEach(ele=>{
-    //     if(ele.offsetHeight === document.documentElement.scrollTop){
-    //         navBarLinks.forEach(link => link.classList.remove("active"))
-    //         let currentSection = ele;
-    //         navBarLinks.forEach(link =>{
-    //             if(link.dataset.link == currentSection.dataset.link){
-    //                 console.log(link)
-    //                 link.classList.add("active")
-    //             }
-    //         })
-    //     }
-    // })
 }
 
 
@@ -83,12 +68,11 @@ schedulesLinks.forEach((link)=>{
     link.onclick = () => false
 })
 
+// handle Classes Content
 function showContent(e){
     schedulesLinks.forEach(link =>{
         link.classList.remove("active");
         e.currentTarget.querySelector("a").classList.add("active");
-        
-
     })
     contents.forEach((content)=>{
         content.classList.remove("active");
