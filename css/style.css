@@ -167,6 +167,12 @@ a{
     text-transform: uppercase;
     color: white;
 }
+@media(max-width:767px){
+    .header .container .logo a{
+        
+        color:var(--black-color);
+    }
+}
 @media(max-width:480px){
     .header .container .logo a{
         font-size: 24px;
