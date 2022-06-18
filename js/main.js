@@ -38,7 +38,7 @@ function toggleNavBarLinks(){
     this.classList.add("active")
 }
 
-navBarLinks.forEach(link=>link.addEventListener("click",toggleNavBarLinks))
+navBarLinks.forEach(link=>link.addEventListener("click",toggleNavBarLinks));
 
 //trigger navbar
 navBarButton.addEventListener("click",showNavBar);
