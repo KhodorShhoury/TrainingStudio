@@ -170,6 +170,7 @@ a{
 @media(max-width:480px){
     .header .container .logo a{
         font-size: 24px;
+        color:var(--black-color);
     }
 }
 
